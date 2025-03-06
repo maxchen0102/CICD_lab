@@ -1,0 +1,30 @@
+# Python 虛擬環境
+venv/
+.env
+
+# Django Migrations（資料庫變更記錄）
+**/migrations/
+
+# 本地環境設定
+*.sqlite3
+db.sqlite3
+
+# Python 相關
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE/編輯器設定
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs & Debug
+logs/
+*.log
+
+# Python Virtual Environments
+pip-log.txt
+pip-delete-this-directory.txt
