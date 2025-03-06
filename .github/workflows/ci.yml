@@ -10,20 +10,20 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # 使用 Ubuntu 系統 在 GitHub Actions 上運行
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v2  # 檢出代碼
 
     - name: Set up Python
-      uses: actions/setup-python@v2  # 設置 Python 環境
-      with:
+      uses: actions/setup-python@v2  # 設置 Python 環境 下載 Python 並設置環境變量
+      with: 
         python-version: '3.8'
 
-    - name: Install dependencies
+    - name: Install dependencies  # 安裝依賴
       run: |
-        python -m venv venv
+        python -m venv venv     # 創建虛擬環境  venv
         source venv/bin/activate
         pip install --upgrade pip
         pip install -r requirements.txt
@@ -31,4 +31,4 @@ jobs:
     - name: Run Django Tests
       run: |
         source venv/bin/activate
-        python manage.py test
+        python manage.py test  # 執行測試
