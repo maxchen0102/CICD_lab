@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2  # 檢d出代碼
+      uses: actions/checkout@v2  # 檢d出代碼666
 
     - name: Set up Python
       uses: actions/setup-python@v2  # 設置 Python 環境 下載 Python 並設置環境變量
