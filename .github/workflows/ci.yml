@@ -34,3 +34,11 @@ jobs:
       run: |
         source venv/bin/activate
         python manage.py test  # 執行測試
+
+  deploy:
+    needs: build  # 只有當 `build` 成功時，才執行 `deploy`
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Render Deployment
+        run: |
+          curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}  # 使用 curl 發送 POST 請求到 Render 這個 hook 已經有所有網址資訊
